@@ -26,7 +26,7 @@ public class UserController {
         List<User> userList = userRepository.listUser();
         model.addAttribute("userList",userList);
         model.addAttribute("title","用户管理");
-        return new ModelAndView("templates.users/list","userModel",model);
+        return new ModelAndView("users/list","userModel",model);
     }
 
     /**
@@ -40,7 +40,7 @@ public class UserController {
         User user = userRepository.getUserById(id);
         model.addAttribute("user",user);
         model.addAttribute("title","查看用户");
-        return new ModelAndView("templates.users/view","userModel",model);
+        return new ModelAndView("users/view","userModel",model);
     }
 
     /**
@@ -52,7 +52,7 @@ public class UserController {
     public ModelAndView createForm(Model model){
         model.addAttribute("user",new User());
         model.addAttribute("title","创建用户");
-        return new ModelAndView("templates.users/form","userModel",model);
+        return new ModelAndView("users/form","userModel",model);
     }
 
     /**
